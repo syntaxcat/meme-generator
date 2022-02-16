@@ -9,7 +9,7 @@ var gMeme = {
 	selectedLineIdx: 0,
 	lines: [
 		{
-			txt: 'blabla',
+			txt: '',
 			size: 20,
 			align: 'left',
 			color: 'red'
@@ -23,4 +23,8 @@ function getImgs() {
 
 function getMeme() {
 	return gMeme;
+}
+
+function updateMemeTxt(newValue) {
+	getMeme().lines[0].txt = newValue;
 }
