@@ -2,9 +2,6 @@
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 };
 
-// var gImgs = [];
-// var gImgId = 0;
-
 var gImgs = [
 	{ id: 1, url: 'images/1.jpg', keywords: [ 'funny' ] },
 	{ id: 2, url: 'images/2.jpg', keywords: [ 'funny' ] },
@@ -48,30 +45,15 @@ function getMeme() {
 }
 
 function setLineTxt(newValue) {
-	getMeme().lines[0].txt = newValue;
-	if (getMeme().lines[1]) {
-		getMeme().lines[0].txt = null;
-		getMeme().lines[1].txt = newValue;
-	}
+	gMeme.lines[gMeme.selectedLineIdx].txt = newValue;
 }
 
 function setColor(color) {
-	gMeme.lines[0].color = color;
-	if (gMeme.lines[1]) {
-		gMeme.lines[1].color = color;
-	}
-	const memeLine = gMeme.lines[gMeme.selectedLineIdx];
-	memeLine.color = color;
+	gMeme.lines[gMeme.selectedLineIdx].color = color;
 }
 
 function setFontSize(diff) {
-	gMeme.lines[0].size += diff;
-	if (gMeme.lines[1]) {
-		gMeme.lines[1].size += diff;
-	}
-	const memeLine = gMeme.lines[gMeme.selectedLineIdx];
-	memeLine.size += diff;
-	console.log(gMeme.lines[0].size);
+	gMeme.lines[gMeme.selectedLineIdx].size += diff;
 }
 
 function createLine() {
@@ -91,25 +73,3 @@ function switchLine() {
 function setMeme(imgId) {
 	gMeme.selectedImgId = imgId;
 }
-
-// function getGImgs() {
-// 	return gImgs;
-// }
-
-// function createGImgs(length) {
-// 	gImgs = [];
-// 	for (var i = 1; i < length + 1; i++) {
-// 		var img = { id: i, url: `img/${i}.jpg` };
-// 		gImgs.push(img);
-// 	}
-// }
-
-// function getImg(id) {
-//     return gImgs[id]
-// }
-
-// function getImgs() {
-//     const imgs = gImgs;
-//     console.log('imgs', gImgs);
-//     return imgs;
-// }
