@@ -15,4 +15,6 @@ function renderGallery() {
 function onImgSelect(imgId) {
 	setMeme(imgId);
 	renderMeme();
+	document.querySelector('.gallery').style.display = 'none';
+	document.querySelector('.editor').style.display = 'block';
 }

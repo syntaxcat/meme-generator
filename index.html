@@ -11,26 +11,11 @@
 
     <header class="main-layout">
         <img class="logo" src="" alt="">
-        <a href="#">Gallery</a>
+        <a href="#" onclick="openGallery()">Gallery</a>
         <a href="#">About</a>
     </header>
 
     <main class="main-layout main-content">
-
-        <div class="canvas-container">
-            <canvas id="canvas"></canvas>
-        </div>
-
-        <div class="actions">
-            <input class="input-txt" type="text">
-            <input type="color" oninput="onTxtColor(this.value)">
-            <button onclick="onAddLine()">add-line</button>
-            <button onclick="onSwitchLine()">switch-lines</button>
-            <button onclick="onSetFontSize(+2)">A+</button>
-            <button onclick="onSetFontSize(-2)">A-</button>
-            <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a>
-
-        </div>
 
         <section class="gallery">
             <div class="gallery-container">
@@ -38,7 +23,23 @@
             </div>
         </section>
 
-        <section class="editor"></section>
+        <section class="editor">
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="actions">
+                <input class="input-txt" type="text">
+                <input type="color" oninput="onTxtColor(this.value)">
+                <button onclick="onAddLine()">add-line</button>
+                <button onclick="onSwitchLine()">switch-lines</button>
+                <button onclick="onSetFontSize(+2)">A+</button>
+                <button onclick="onSetFontSize(-2)">A-</button>
+                <!-- <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a> -->
+            </div>
+        </section>
+
+        
+
 
     </main>
 
@@ -50,5 +51,6 @@
     <script src="services/memeService.js"></script>
     <script src="contorllers/galleryController.js"></script>
     <script src="contorllers/memeController.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

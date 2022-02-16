@@ -60,8 +60,8 @@ function onSwitchLine() {
 }
 
 //NEEDS TO BE DOWNLOADED TO SAVED MEMES
-function onDownloadCanvas(elLink) {
-	const data = canvas.toDataURL();
-	elLink.href = data;
-	elLink.download = 'blabla';
-}
+// function onDownloadCanvas(elLink) {
+// 	const data = canvas.toDataURL();
+// 	elLink.href = data;
+// 	elLink.download = 'blabla';
+// }
