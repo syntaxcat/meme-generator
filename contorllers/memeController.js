@@ -1,6 +1,7 @@
 'use strict';
 
 function onInit() {
+	initGallery();
 	renderMeme();
 }
 
@@ -28,6 +29,49 @@ const input = document.querySelector('.input-txt');
 input.addEventListener('input', onInputChange);
 
 function onInputChange(ev) {
-	updateMemeTxt(ev.target.value);
-	// renderMeme();
+	setLineTxt(ev.target.value);
+	renderMeme();
 }
+
+// function onMemeSelected(image) {
+// 	var clickedImg = getImgs().find((img) => {
+// 		return img.url === image.src;
+// 	});
+// 	getMeme().selectedImgId = clickedImg.id;
+// 	console.log(gMeme);
+// 	draw();
+// }
+
+function onAddTxt(elTxt) {
+	setLineTxt(elTxt);
+	renderMeme();
+}
+
+function onTxtColor(val) {
+	setColor(val);
+	renderMeme();
+}
+
+function onSetFontSize(diff) {
+	setFontSize(diff);
+	renderMeme();
+}
+
+function onAddLine() {
+	createLine();
+	renderMeme();
+}
+
+function onSwitchLine() {
+	switchLine();
+}
+
+// function renderTxtImg(){
+//     const meme =getMeme();
+//     const memeLines = meme.lines;
+//     memeLines.forEach(memeLine=>{
+//         gCtx.font = `${memeLine.size}px Georgia`
+//         gCtx.fillStyle =memeLine.color
+//         gCtx.fillText(memeLine.txt, memeLine.x, memeLine.y);
+//     })
+// }

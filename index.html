@@ -8,32 +8,48 @@
     <title>Meme-Generator</title>
 </head>
 <body onload="onInit()">
-    <header>
 
+    <header class="main-layout">
+        <img class="logo" src="" alt="">
+        <a href="#">Gallery</a>
+        <a href="#">About</a>
     </header>
 
+    <main class="main-layout main-content">
 
-    <main>
+        <div class="canvas-container">
+            <canvas id="canvas" height="300" width="300"></canvas>
+        </div>
 
-        <canvas id="canvas"></canvas>
+        <div class="actions">
+            <input class="input-txt" type="text">
+            <input type="color" oninput="onTxtColor(this.value)">
+            <button onclick="onAddLine()">add-line</button>
+            <button onclick="onSwitchLine()">switch-lines</button>
+            <button onclick="onSetFontSize(+2)">A+</button>
+            <button onclick="onSetFontSize(-2)">A-</button>
+        </div>
 
-        <input class="input-txt" type="text">
-        
         <section class="gallery">
-            <img class = "image" onclick="onMemeSelected(this)" src="images/4.jpg" alt="cat">
+            <div class="gallery-container">
+
+                <!-- <div class="gallery-meme"></div> -->
+            </div>
+            <!-- <img class = "image" onclick="onMemeSelected(this)" src="images/4.jpg" alt="cat"> -->
         </section>
 
         <section class="editor"></section>
 
     </main>
 
-
-    <footer>
-
+    <footer class="main-layout">
+        <img class="logo" src="" alt="">
+        <p>coffeeRight 2022 MICHAELA BEREZA</p>
     </footer>
 
     <script src="main.js"></script>
     <script src="services/memeService.js"></script>
+    <script src="contorllers/galleryController.js"></script>
     <script src="contorllers/memeController.js"></script>
 </body>
 </html>
