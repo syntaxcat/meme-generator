@@ -31,7 +31,7 @@ var gMeme = {
 			txt: '',
 			size: 20,
 			align: 'left',
-			color: 'red'
+			color: '#168aad'
 		}
 	]
 };
@@ -62,7 +62,7 @@ function createLine() {
 		txt: '',
 		size: 20,
 		align: 'left',
-		color: 'red'
+		color: '#168aad'
 	});
 }
 

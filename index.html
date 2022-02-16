@@ -12,7 +12,8 @@
     <header class="main-layout">
         <img class="logo" src="" alt="">
         <a href="#" onclick="openGallery()">Gallery</a>
-        <a href="#">About</a>
+        <a href="#" onclick="openSavedMemes()">Memes</a>
+        <a href="#" onclick="openAboutPage()">About</a>
     </header>
 
     <main class="main-layout main-content">
@@ -29,7 +30,7 @@
             </div>
             <div class="actions">
                 <input class="input-txt" type="text">
-                <input type="color" oninput="onTxtColor(this.value)">
+                <input type="color" oninput="onTxtColor(this.value)" value="#168aad">
                 <button onclick="onAddLine()">add-line</button>
                 <button onclick="onSwitchLine()">switch-lines</button>
                 <button onclick="onSetFontSize(+2)">A+</button>
@@ -38,7 +39,13 @@
             </div>
         </section>
 
+        <section class="saved-memes">
+            <h1>saved-memes</h1>
+        </section>
         
+        <section class="about">
+            <h1>about</h1>
+        </section>
 
 
     </main>

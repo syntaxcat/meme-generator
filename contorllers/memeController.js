@@ -1,10 +1,5 @@
 'use strict';
 
-function onInit() {
-	initGallery();
-	renderMeme();
-}
-
 function renderMeme() {
 	var canvas = document.querySelector('#canvas');
 	var ctx = canvas.getContext('2d');
