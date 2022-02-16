@@ -25,6 +25,8 @@ function renderMeme() {
 	img.src = result.url;
 }
 
+// var inputColor = document.querySelector('.color');
+
 const input = document.querySelector('.input-txt');
 
 input.addEventListener('input', onInputChange);
@@ -45,12 +47,17 @@ function onSetFontSize(diff) {
 }
 
 function onAddLine() {
+	input.value = '';
 	createLine();
 	renderMeme();
 }
 
 function onSwitchLine() {
 	switchLine();
+	var currLine = getCurrLine();
+	input.value = currLine.txt;
+
+	// inputColor = currLine.color;
 	renderMeme();
 }
 

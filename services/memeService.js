@@ -73,3 +73,7 @@ function switchLine() {
 function setMeme(imgId) {
 	gMeme.selectedImgId = imgId;
 }
+
+function getCurrLine() {
+	return gMeme.lines[gMeme.selectedLineIdx];
+}
