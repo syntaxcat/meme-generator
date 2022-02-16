@@ -7,12 +7,32 @@
     <link rel="stylesheet" href="main.css">
     <title>Meme-Generator</title>
 </head>
-<body>
+<body onload="onInit()">
+    <header>
+
+    </header>
 
 
-    <section class="gallery"></section>
-    <section class="editor"></section>
+    <main>
+
+        <canvas id="canvas"></canvas>
+
+        
+        <section class="gallery">
+            <img class = "image" onclick="onMemeSelected(this)" src="images/4.jpg" alt="cat">
+        </section>
+
+        <section class="editor"></section>
+
+    </main>
+
+
+    <footer>
+
+    </footer>
 
     <script src="main.js"></script>
+    <script src="services/memeService.js"></script>
+    <script src="contorllers/memeController.js"></script>
 </body>
 </html>
