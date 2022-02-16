@@ -13,12 +13,17 @@ function renderMeme() {
 		canvas.width = img.width;
 		canvas.height = img.height;
 		ctx.drawImage(img, 0, 0);
-
 		ctx.font = `${getMeme().lines[0].size}px IMPACT`;
-
+		//1
 		var text = getMeme().lines[0].txt;
 		ctx.fillStyle = getMeme().lines[0].color;
 		ctx.fillText(text, 30, 30);
+		//2
+		if (getMeme().lines[1]) {
+			var secText = getMeme().lines[1].txt;
+			ctx.fillStyle = getMeme().lines[1].color;
+			ctx.fillText(secText, 30, 480);
+		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
 	img.src = result.url;
@@ -64,6 +69,7 @@ function onAddLine() {
 
 function onSwitchLine() {
 	switchLine();
+	renderMeme();
 }
 
 // function renderTxtImg(){
