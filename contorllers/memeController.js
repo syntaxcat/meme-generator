@@ -72,10 +72,6 @@ function onSwitchLine() {
 	renderMeme();
 }
 
-function onChangeColorStroke() {
-	changeColorStroke();
-}
-
 function toggleMenu() {
 	document.body.classList.toggle('menu-open');
 }
