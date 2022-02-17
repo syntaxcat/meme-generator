@@ -3,7 +3,6 @@
 function onInit() {
 	initGallery();
 	openGallery();
-	// renderMeme();
 }
 
 function openGallery() {
@@ -24,5 +23,5 @@ function openAboutPage() {
 	document.querySelector('.editor').style.display = 'none';
 	document.querySelector('.gallery').style.display = 'none';
 	document.querySelector('.saved-memes').style.display = 'none';
-	document.querySelector('.about').style.display = 'block';
+	document.querySelector('.about').style.display = 'flex';
 }

@@ -1,0 +1,26 @@
+/* <img src="images/IMG_4828.jpeg" alt=""> */
+/* <div class="myImg"></s/div> */
+
+.about {
+	gap: 2rem;
+	padding: 2rem;
+	align-items: center;
+}
+
+.about .myImg {
+	width: 250px;
+	height: 250px;
+	background-color: red;
+	background-image: url("../images/IMG_4828.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 100%;
+	flex-shrink: no-shrink;
+}
+
+@media screen and (max-width: 576px) {
+	.about {
+		flex-direction: column;
+	}
+}

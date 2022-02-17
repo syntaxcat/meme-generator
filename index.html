@@ -10,27 +10,29 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/main-content.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/about.css">
     <title>Meme-Generator</title>
 </head>
 <body onload="onInit()">
+    <div class="main-screen" onclick="toggleMenu()"></div>
 
     <header class="main-layout">
         <div class="container">
             <img class="logo" src="design/LOGO.png" alt="">
             <nav>
-                <a href="#" onclick="openGallery()">Gallery</a>
+                <a href="#" onclick="openGallery(); toggleMenu()">Gallery</a>
                 <div class="Seperator"></div>
-                <a href="#" onclick="openSavedMemes()">Memes</a>
+                <a href="#" onclick="openSavedMemes(); toggleMenu()">Memes</a>
                 <div class="Seperator"></div>
-                <a href="#" onclick="openAboutPage()">About</a>
+                <a href="#" onclick="openAboutPage(); toggleMenu()">About</a>
             </nav>
+            <button class="btn-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
 
     <main class="main-layout main-content">
 
         <section class="gallery">
-            <!-- <div class="serch-meme"></div> -->
             <div class="gallery-container">
             </div>
         </section>
@@ -39,16 +41,18 @@
             <div class="canvas-container">
                 <canvas id="canvas"></canvas>
             </div>
-            <div class="actions">
-                <div class="container">
+            <div class="container">
+                    <div class="actions">
                     <input class="input-txt" type="text">
+                    <div class="group1">
+                        <button onclick="onAddLine()">add-line</button>
+                        <button onclick="onDeleteLine()">delete-line</button>
+                        <button onclick="onSwitchLine()">switch-lines</button>
+                    </div>
                     <input class= "color" type="color" oninput="onTxtColor(this.value)" value="#168aad">
-                    <button onclick="onAddLine()">add-line</button>
-                    <button onclick="onDeleteLine()">delete-line</button>
-                    <button onclick="onSwitchLine()">switch-lines</button>
                     <button onclick="onSetFontSize(+2)">A+</button>
                     <button onclick="onSetFontSize(-2)">A-</button>
-                <!-- <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a> -->
+                    <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a>
                 </div>
             </div>
         </section>
@@ -58,7 +62,10 @@
         </section>
         
         <section class="about">
-            <h1>about</h1>
+            <div>
+                <div class="myImg"></div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem odio expedita excepturi, animi, nemo odit molestias laudantium eos sint possimus, consequatur nobis est ad minima quo quis. Reiciendis, maiores harum!</p>
         </section>
 
 

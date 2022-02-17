@@ -13,3 +13,9 @@ footer p {
 	margin-top: 1rem;
 	letter-spacing: 0.39px;
 }
+
+@media screen and (max-width: 576px) {
+	footer p {
+		font-size: 0.8rem;
+	}
+}

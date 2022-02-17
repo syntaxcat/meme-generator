@@ -1,8 +1,3 @@
-/* .main-content .serch-meme {
-	background-color: var(--clr2);
-	height: 2rem;
-} */
-
 .main-content .gallery {
 	background-color: var(--clr5);
 	padding-left: 2rem;
@@ -24,6 +19,11 @@
 
 .main-content .editor {
 	display: flex;
+	padding: 0 1rem;
+}
+
+.main-content .editor > * {
+	width: 50%;
 }
 
 .main-content .canvas-container {
@@ -33,9 +33,38 @@
 .main-content .actions .container {
 	display: flex;
 	flex-direction: column;
-}
-
-.main-content .actions {
 	height: 20rem;
 	width: 20rem;
+}
+
+.myImg img {
+	max-width: 100%;
+	border-radius: 50%;
+}
+
+.actions {
+	text-align: center;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+	.gallery-container {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(9, 1fr);
+		grid-gap: 10px;
+	}
+
+	.canvas-container canvas {
+		width: 300px;
+		height: 300px;
+		margin: 0 auto;
+	}
+
+	.main-content .editor > * {
+		width: 100%;
+	}
+
+	.editor {
+		flex-direction: column;
+	}
 }

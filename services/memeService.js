@@ -1,7 +1,5 @@
 'use strict';
 
-var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 };
-
 var gImgs = [
 	{ id: 1, url: 'images/1.jpg', keywords: [ 'funny' ] },
 	{ id: 2, url: 'images/2.jpg', keywords: [ 'funny' ] },
@@ -29,9 +27,11 @@ var gMeme = {
 	lines: [
 		{
 			txt: '',
-			size: 20,
+			size: 40,
 			align: 'left',
-			color: '#168aad'
+			color: '#168aad',
+			x: 30,
+			y: 30
 		}
 	]
 };
@@ -53,21 +53,18 @@ function setColor(color) {
 }
 
 function setFontSize(diff) {
-	//TODO:MAX-SIZE and MIN-SIZE ALLOWED
-	// if (gMeme.lines[gMeme.selectedLineIdx].size === 50) return;
-	// if (gMeme.lines[gMeme.selectedLineIdx].size === 10) return;
 	gMeme.lines[gMeme.selectedLineIdx].size += diff;
 	console.log(gMeme.lines[gMeme.selectedLineIdx].size);
 }
 
 function createLine() {
-	gMeme.selectedLineIdx = 1;
 	gMeme.lines.push({
 		txt: '',
-		size: 20,
+		size: 40,
 		align: 'left',
 		color: '#168aad'
 	});
+	gMeme.selectedLineIdx++;
 }
 
 function deleteLine() {
@@ -88,20 +85,4 @@ function setMeme(imgId) {
 
 function getCurrLine() {
 	return gMeme.lines[gMeme.selectedLineIdx];
-}
-
-function getEvPos(ev) {
-	var pos = {
-		x: ev.offsetX,
-		y: ev.offsetY
-	};
-	// if (gTouchEvs.includes(ev.type)) {
-	// 	ev.preventDefault();
-	// 	ev = ev.changedTouches[0];
-	// 	pos = {
-	// 		x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-	// 		y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
-	// 	};
-	// }
-	return pos;
 }

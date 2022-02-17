@@ -12,7 +12,7 @@ function renderMeme() {
 		ctx.font = `${getMeme().lines[0].size}px IMPACT`;
 		var text = getMeme().lines[0].txt;
 		ctx.fillStyle = getMeme().lines[0].color;
-		ctx.fillText(text, 30, 30);
+		ctx.fillText(text, 30, 60);
 		//2
 		if (getMeme().lines[1]) {
 			ctx.font = `${getMeme().lines[1].size}px IMPACT`;
@@ -67,9 +67,16 @@ function onSwitchLine() {
 	renderMeme();
 }
 
-//NEEDS TO BE DOWNLOADED TO SAVED MEMES
-// function onDownloadCanvas(elLink) {
-// 	const data = canvas.toDataURL();
-// 	elLink.href = data;
-// 	elLink.download = 'blabla';
-// }
+function onChangeColorStroke() {
+	changeColorStroke();
+}
+
+function toggleMenu() {
+	document.body.classList.toggle('menu-open');
+}
+
+function onDownloadCanvas(elLink) {
+	const data = canvas.toDataURL();
+	elLink.href = data;
+	elLink.download = 'blabla';
+}
