@@ -57,8 +57,9 @@ function onAddLine() {
 
 function onDeleteLine() {
 	input.focus();
-	input.value = '';
 	deleteLine();
+	input.value = getCurrLine().txt;
+	inputColor.value = getCurrLine().color;
 	renderMeme();
 }
 

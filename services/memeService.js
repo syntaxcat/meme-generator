@@ -59,6 +59,7 @@ function deleteLine() {
 		getCurrLine().txt = '';
 	} else {
 		gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+		gMeme.selectedLineIdx = gMeme.selectedLineIdx - 1;
 	}
 }
 
