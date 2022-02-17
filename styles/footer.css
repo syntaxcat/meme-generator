@@ -1,0 +1,15 @@
+footer {
+	background-color: var(--clr1);
+	color: var(--clr2);
+}
+
+footer .container {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-align: center;
+}
+
+footer p {
+	margin-top: 1rem;
+	letter-spacing: 0.39px;
+}

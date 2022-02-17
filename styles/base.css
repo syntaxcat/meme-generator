@@ -3,6 +3,7 @@
 	--clr2: #fff;
 	--clr3: #8a8a8a;
 	--clr4: #040a2c;
+	--clr5: #e3e3e3;
 }
 
 * {
@@ -14,4 +15,14 @@ html {
 	font-family: Montserrat;
 	font-weight: normal;
 	font-size: 1.5rem;
+}
+
+main {
+	flex-grow: 1;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
