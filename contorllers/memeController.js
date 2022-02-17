@@ -82,3 +82,7 @@ function onDownloadCanvas(elLink) {
 	elLink.href = data;
 	elLink.download = 'blabla';
 }
+
+function showColorPicker() {
+	document.querySelector('.color').click();
+}
