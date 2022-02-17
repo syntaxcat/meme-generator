@@ -49,7 +49,7 @@ function createLine() {
 		txt: '',
 		size: 40,
 		align: 'left',
-		color: '#168aad'
+		color: '#fff'
 	});
 	gMeme.selectedLineIdx++;
 }
@@ -75,7 +75,7 @@ function setMeme(imgId) {
 				txt: '',
 				size: 40,
 				align: 'left',
-				color: '#168aad',
+				color: '#fff',
 				x: 30,
 				y: 30
 			}
