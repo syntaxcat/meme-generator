@@ -76,9 +76,7 @@ function setMeme(imgId) {
 				txt: '',
 				size: 40,
 				align: 'left',
-				color: '#ffffff',
-				x: 30,
-				y: 30
+				color: '#ffffff'
 			}
 		]
 	};
