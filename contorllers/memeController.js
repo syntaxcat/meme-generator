@@ -13,12 +13,14 @@ function renderMeme() {
 		var text = getMeme().lines[0].txt;
 		ctx.fillStyle = getMeme().lines[0].color;
 		ctx.fillText(text, 30, 60);
+		ctx.strokeText(text, 30, 60);
 		//2
 		if (getMeme().lines[1]) {
 			ctx.font = `${getMeme().lines[1].size}px IMPACT`;
 			var secText = getMeme().lines[1].txt;
 			ctx.fillStyle = getMeme().lines[1].color;
 			ctx.fillText(secText, 30, 480);
+			ctx.strokeText(secText, 30, 480);
 		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
