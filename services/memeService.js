@@ -1,5 +1,7 @@
 'use strict';
 
+var gMeme;
+
 var gImgs = [
 	{ id: 1, url: 'images/1.jpg', keywords: [ 'funny' ] },
 	{ id: 2, url: 'images/2.jpg', keywords: [ 'funny' ] },
@@ -20,21 +22,6 @@ var gImgs = [
 	{ id: 17, url: 'images/17.jpg', keywords: [ 'funny' ] },
 	{ id: 18, url: 'images/18.jpg', keywords: [ 'funny' ] }
 ];
-
-var gMeme = {
-	selectedImgId: 1,
-	selectedLineIdx: 0,
-	lines: [
-		{
-			txt: '',
-			size: 40,
-			align: 'left',
-			color: '#168aad',
-			x: 30,
-			y: 30
-		}
-	]
-};
 
 function getImgs() {
 	return gImgs;
@@ -80,7 +67,20 @@ function switchLine() {
 }
 
 function setMeme(imgId) {
-	gMeme.selectedImgId = imgId;
+	gMeme = {
+		selectedImgId: imgId,
+		selectedLineIdx: 0,
+		lines: [
+			{
+				txt: '',
+				size: 40,
+				align: 'left',
+				color: '#168aad',
+				x: 30,
+				y: 30
+			}
+		]
+	};
 }
 
 function getCurrLine() {
