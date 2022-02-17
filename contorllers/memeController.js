@@ -49,12 +49,14 @@ function onSetFontSize(diff) {
 }
 
 function onAddLine() {
+	input.focus();
 	input.value = '';
 	createLine();
 	renderMeme();
 }
 
 function onDeleteLine() {
+	input.focus();
 	input.value = '';
 	deleteLine();
 	renderMeme();
@@ -62,6 +64,7 @@ function onDeleteLine() {
 
 //TODO: FIX SWITCH(IF THERE IS NO ADDED LINE BEFORE-IT CANNOT SWITCH)
 function onSwitchLine() {
+	input.focus();
 	switchLine();
 	var currLine = getCurrLine();
 	input.value = currLine.txt;

@@ -17,4 +17,5 @@ function onImgSelect(imgId) {
 	renderMeme();
 	document.querySelector('.gallery').style.display = 'none';
 	document.querySelector('.editor').style.display = 'flex';
+	document.querySelector('.input-txt').focus();
 }
