@@ -70,6 +70,14 @@ function createLine() {
 	});
 }
 
+function deleteLine() {
+	if (gMeme.lines.length === 1) {
+		getCurrLine().txt = '';
+	} else {
+		gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+	}
+}
+
 function switchLine() {
 	gMeme.selectedLineIdx = gMeme.selectedLineIdx === 0 ? 1 : 0;
 }
@@ -80,4 +88,20 @@ function setMeme(imgId) {
 
 function getCurrLine() {
 	return gMeme.lines[gMeme.selectedLineIdx];
+}
+
+function getEvPos(ev) {
+	var pos = {
+		x: ev.offsetX,
+		y: ev.offsetY
+	};
+	// if (gTouchEvs.includes(ev.type)) {
+	// 	ev.preventDefault();
+	// 	ev = ev.changedTouches[0];
+	// 	pos = {
+	// 		x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+	// 		y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
+	// 	};
+	// }
+	return pos;
 }

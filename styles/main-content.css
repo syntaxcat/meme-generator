@@ -1,12 +1,12 @@
-.main-content {
-}
+/* .main-content .serch-meme {
+	background-color: var(--clr2);
+	height: 2rem;
+} */
 
 .main-content .gallery {
 	background-color: var(--clr5);
-	padding-top: 1rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
-	padding-bottom: 1rem;
 }
 
 .gallery-container {
@@ -23,4 +23,19 @@
 }
 
 .main-content .editor {
+	display: flex;
+}
+
+.main-content .canvas-container {
+	display: flex;
+}
+
+.main-content .actions .container {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content .actions {
+	height: 20rem;
+	width: 20rem;
 }

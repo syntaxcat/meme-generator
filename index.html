@@ -30,8 +30,8 @@
     <main class="main-layout main-content">
 
         <section class="gallery">
+            <!-- <div class="serch-meme"></div> -->
             <div class="gallery-container">
-                <!-- <div class="gallery-meme"></div> -->
             </div>
         </section>
 
@@ -40,13 +40,16 @@
                 <canvas id="canvas"></canvas>
             </div>
             <div class="actions">
-                <input class="input-txt" type="text">
-                <input class= "color" type="color" oninput="onTxtColor(this.value)" value="#168aad">
-                <button onclick="onAddLine()">add-line</button>
-                <button onclick="onSwitchLine()">switch-lines</button>
-                <button onclick="onSetFontSize(+2)">A+</button>
-                <button onclick="onSetFontSize(-2)">A-</button>
+                <div class="container">
+                    <input class="input-txt" type="text">
+                    <input class= "color" type="color" oninput="onTxtColor(this.value)" value="#168aad">
+                    <button onclick="onAddLine()">add-line</button>
+                    <button onclick="onDeleteLine()">delete-line</button>
+                    <button onclick="onSwitchLine()">switch-lines</button>
+                    <button onclick="onSetFontSize(+2)">A+</button>
+                    <button onclick="onSetFontSize(-2)">A-</button>
                 <!-- <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a> -->
+                </div>
             </div>
         </section>
 

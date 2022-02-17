@@ -52,6 +52,12 @@ function onAddLine() {
 	renderMeme();
 }
 
+function onDeleteLine() {
+	input.value = '';
+	deleteLine();
+	renderMeme();
+}
+
 //TODO: FIX SWITCH(IF THERE IS NO ADDED LINE BEFORE-IT CANNOT SWITCH)
 function onSwitchLine() {
 	switchLine();
