@@ -53,7 +53,11 @@ function setColor(color) {
 }
 
 function setFontSize(diff) {
+	//TODO:MAX-SIZE and MIN-SIZE ALLOWED
+	// if (gMeme.lines[gMeme.selectedLineIdx].size === 50) return;
+	// if (gMeme.lines[gMeme.selectedLineIdx].size === 10) return;
 	gMeme.lines[gMeme.selectedLineIdx].size += diff;
+	console.log(gMeme.lines[gMeme.selectedLineIdx].size);
 }
 
 function createLine() {

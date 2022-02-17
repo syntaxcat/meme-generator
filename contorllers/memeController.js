@@ -52,11 +52,11 @@ function onAddLine() {
 	renderMeme();
 }
 
+//TODO: FIX SWITCH(IF THERE IS NO ADDED LINE BEFORE-IT CANNOT SWITCH)
 function onSwitchLine() {
 	switchLine();
 	var currLine = getCurrLine();
 	input.value = currLine.txt;
-
 	inputColor.value = currLine.color;
 	renderMeme();
 }

@@ -5,15 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/helpers.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <title>Meme-Generator</title>
 </head>
 <body onload="onInit()">
 
     <header class="main-layout">
-        <img class="logo" src="" alt="">
-        <a href="#" onclick="openGallery()">Gallery</a>
-        <a href="#" onclick="openSavedMemes()">Memes</a>
-        <a href="#" onclick="openAboutPage()">About</a>
+        <div class="container">
+            <img class="logo" src="design/LOGO.png" alt="">
+            <nav>
+                <div>
+                    <a href="#" onclick="openGallery()">Gallery</a>
+                </div>
+                <div class="Seperator"></div>
+                <div>
+                    <a href="#" onclick="openSavedMemes()">Memes</a>
+                </div>
+                <div class="Seperator"></div>
+                <div>
+                    <a href="#" onclick="openAboutPage()">About</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main class="main-layout main-content">
@@ -51,8 +68,8 @@
     </main>
 
     <footer class="main-layout">
-        <img class="logo" src="" alt="">
-        <p>coffeeRight 2022 MICHAELA BEREZA</p>
+        <img class="logo" src="design/LOGO.png" alt="">
+        <p>By MICHAELA BEREZA ©</p>
     </footer>
 
     <script src="services/memeService.js"></script>

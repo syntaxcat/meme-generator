@@ -1,0 +1,17 @@
+:root {
+	--clr1: #ff7f00;
+	--clr2: #fff;
+	--clr3: #8a8a8a;
+	--clr4: #040a2c;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+	font-family: Montserrat;
+	font-weight: normal;
+	font-size: 1.5rem;
+}
