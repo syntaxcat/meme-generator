@@ -50,7 +50,8 @@ function createLine() {
 		size: 40,
 		align: 'center',
 		color: '#ffffff',
-		y: 480
+		y: 480,
+		font: 'IMPACT'
 	});
 	gMeme.selectedLineIdx++;
 }
