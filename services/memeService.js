@@ -48,7 +48,7 @@ function createLine() {
 	gMeme.lines.push({
 		txt: '',
 		size: 40,
-		align: 'left',
+		align: 'center',
 		color: '#ffffff'
 	});
 	gMeme.selectedLineIdx++;
@@ -75,7 +75,7 @@ function setMeme(imgId) {
 			{
 				txt: '',
 				size: 40,
-				align: 'left',
+				align: 'center',
 				color: '#ffffff'
 			}
 		]
@@ -84,4 +84,8 @@ function setMeme(imgId) {
 
 function getCurrLine() {
 	return gMeme.lines[gMeme.selectedLineIdx];
+}
+
+function setTextAlign(align) {
+	gMeme.lines[gMeme.selectedLineIdx].align = align;
 }

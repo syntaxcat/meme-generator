@@ -3,6 +3,8 @@
 function renderMeme() {
 	var canvas = document.querySelector('#canvas');
 	var ctx = canvas.getContext('2d');
+	let x;
+
 	var img = new Image();
 	img.onload = function() {
 		canvas.width = img.width;
@@ -12,15 +14,35 @@ function renderMeme() {
 		ctx.font = `${getMeme().lines[0].size}px IMPACT`;
 		var text = getMeme().lines[0].txt;
 		ctx.fillStyle = getMeme().lines[0].color;
-		ctx.fillText(text, 30, 60);
-		ctx.strokeText(text, 30, 60);
+
+		ctx.textAlign = getMeme().lines[0].align;
+
+		if (ctx.textAlign === 'center') {
+			x = canvas.width / 2;
+		} else if (ctx.textAlign === 'left') {
+			x = 20;
+		} else {
+			x = canvas.width - 20;
+		}
+		ctx.fillText(text, x, 60);
+		ctx.strokeText(text, x, 60);
+
 		//2
 		if (getMeme().lines[1]) {
 			ctx.font = `${getMeme().lines[1].size}px IMPACT`;
 			var secText = getMeme().lines[1].txt;
 			ctx.fillStyle = getMeme().lines[1].color;
-			ctx.fillText(secText, 30, 480);
-			ctx.strokeText(secText, 30, 480);
+			ctx.textAlign = getMeme().lines[1].align;
+
+			if (ctx.textAlign === 'center') {
+				x = canvas.width / 2;
+			} else if (ctx.textAlign === 'left') {
+				x = 20;
+			} else {
+				x = canvas.width - 20;
+			}
+			ctx.fillText(secText, x, 480);
+			ctx.strokeText(secText, x, 480);
 		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
@@ -85,4 +107,10 @@ function onDownloadCanvas(elLink) {
 
 function showColorPicker() {
 	document.querySelector('.color').click();
+}
+
+function onTextAlign(align) {
+	input.focus();
+	setTextAlign(align);
+	renderMeme();
 }
