@@ -49,7 +49,8 @@ function createLine() {
 		txt: '',
 		size: 40,
 		align: 'center',
-		color: '#ffffff'
+		color: '#ffffff',
+		y: 480
 	});
 	gMeme.selectedLineIdx++;
 }
@@ -76,7 +77,8 @@ function setMeme(imgId) {
 				txt: '',
 				size: 40,
 				align: 'center',
-				color: '#ffffff'
+				color: '#ffffff',
+				y: 60
 			}
 		]
 	};
@@ -88,4 +90,12 @@ function getCurrLine() {
 
 function setTextAlign(align) {
 	gMeme.lines[gMeme.selectedLineIdx].align = align;
+}
+
+function moveLineDown() {
+	gMeme.lines[gMeme.selectedLineIdx].y -= 20;
+}
+
+function moveLineUp() {
+	gMeme.lines[gMeme.selectedLineIdx].y += 20;
 }

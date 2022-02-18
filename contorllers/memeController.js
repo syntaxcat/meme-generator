@@ -24,8 +24,8 @@ function renderMeme() {
 		} else {
 			x = canvas.width - 20;
 		}
-		ctx.fillText(text, x, 60);
-		ctx.strokeText(text, x, 60);
+		ctx.fillText(text, x, getMeme().lines[0].y);
+		ctx.strokeText(text, x, getMeme().lines[0].y);
 
 		//2
 		if (getMeme().lines[1]) {
@@ -41,8 +41,8 @@ function renderMeme() {
 			} else {
 				x = canvas.width - 20;
 			}
-			ctx.fillText(secText, x, 480);
-			ctx.strokeText(secText, x, 480);
+			ctx.fillText(secText, x, getMeme().lines[1].y);
+			ctx.strokeText(secText, x, getMeme().lines[1].y);
 		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
@@ -112,5 +112,15 @@ function showColorPicker() {
 function onTextAlign(align) {
 	input.focus();
 	setTextAlign(align);
+	renderMeme();
+}
+
+function onMoveLineDown() {
+	moveLineDown();
+	renderMeme();
+}
+
+function onMoveLineUp() {
+	moveLineUp();
 	renderMeme();
 }
