@@ -78,7 +78,8 @@ function setMeme(imgId) {
 				size: 40,
 				align: 'center',
 				color: '#ffffff',
-				y: 60
+				y: 60,
+				font: 'IMPACT'
 			}
 		]
 	};
@@ -98,4 +99,8 @@ function moveLineDown() {
 
 function moveLineUp() {
 	gMeme.lines[gMeme.selectedLineIdx].y += 20;
+}
+
+function changeFontFamily(font) {
+	gMeme.lines[gMeme.selectedLineIdx].font = font;
 }

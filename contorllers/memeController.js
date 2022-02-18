@@ -11,7 +11,7 @@ function renderMeme() {
 		canvas.height = img.height;
 		ctx.drawImage(img, 0, 0);
 		//1
-		ctx.font = `${getMeme().lines[0].size}px IMPACT`;
+		ctx.font = `${getMeme().lines[0].size}px ${getMeme().lines[0].font}`;
 		var text = getMeme().lines[0].txt;
 		ctx.fillStyle = getMeme().lines[0].color;
 
@@ -29,7 +29,7 @@ function renderMeme() {
 
 		//2
 		if (getMeme().lines[1]) {
-			ctx.font = `${getMeme().lines[1].size}px IMPACT`;
+			ctx.font = `${getMeme().lines[1].size}px ${getMeme().lines[1].font}`;
 			var secText = getMeme().lines[1].txt;
 			ctx.fillStyle = getMeme().lines[1].color;
 			ctx.textAlign = getMeme().lines[1].align;
@@ -122,5 +122,10 @@ function onMoveLineDown() {
 
 function onMoveLineUp() {
 	moveLineUp();
+	renderMeme();
+}
+
+function onChangeFontFamily(val) {
+	changeFontFamily(val);
 	renderMeme();
 }
