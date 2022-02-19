@@ -64,7 +64,6 @@ function onAddLine() {
 }
 
 function onDeleteLine() {
-	input.focus();
 	deleteLine();
 	input.value = getCurrLine().txt;
 	inputColor.value = getCurrLine().color;
@@ -73,7 +72,6 @@ function onDeleteLine() {
 
 //TODO: FIX SWITCH(IF THERE IS NO ADDED LINE BEFORE-IT CANNOT SWITCH)
 function onSwitchLine() {
-	input.focus();
 	switchLine();
 	var currLine = getCurrLine();
 	input.value = currLine.txt;
