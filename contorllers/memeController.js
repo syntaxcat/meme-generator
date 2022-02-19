@@ -3,22 +3,6 @@ var canvas = document.querySelector('#canvas');
 var ctx = canvas.getContext('2d');
 const IMAGE_SIZE = 500;
 
-canvas.addEventListener('click', (e) => {
-	const ratio = IMAGE_SIZE / e.target.clientWidth;
-	const clickedY = e.offsetY * ratio;
-	const lines = getMeme().lines;
-	for (var i = 0; i < lines.length; i++) {
-		const line = lines[i];
-		if (line.y < clickedY && clickedY < line.y + line.size) {
-			getMeme().selectedLineIdx = i;
-			input.value = line.txt;
-			inputColor.value = line.color;
-			selectFontFamily.value = line.font;
-			renderMeme();
-		}
-	}
-});
-
 function renderMeme(markCurrLine = true) {
 	var img = new Image();
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);

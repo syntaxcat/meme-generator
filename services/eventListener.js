@@ -20,6 +20,18 @@ function addTouchListeners() {
 function onDown(ev) {
 	ev.preventDefault();
 	const pos = getEvPos(ev);
+	const ratio = IMAGE_SIZE / ev.target.clientWidth;
+	const lines = getMeme().lines;
+	for (var i = 0; i < lines.length; i++) {
+		const line = lines[i];
+		if (line.y < pos.y * ratio && pos.y * ratio < line.y + line.size) {
+			getMeme().selectedLineIdx = i;
+			input.value = line.txt;
+			inputColor.value = line.color;
+			selectFontFamily.value = line.font;
+			renderMeme();
+		}
+	}
 	gIsDrag = true;
 	gStartPos = pos;
 	canvas.style.cursor = 'grabbing';
