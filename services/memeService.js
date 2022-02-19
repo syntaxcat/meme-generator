@@ -45,12 +45,19 @@ function setFontSize(diff) {
 }
 
 function createLine() {
+	let y;
+	if (gMeme.lines.length >= 2) {
+		console.log(gMeme.lines.length);
+		y = 240;
+	} else {
+		y = 480;
+	}
 	gMeme.lines.push({
 		txt: '',
 		size: 40,
 		align: 'center',
 		color: '#ffffff',
-		y: 480,
+		y: y,
 		font: 'IMPACT'
 	});
 	gMeme.selectedLineIdx++;
@@ -61,7 +68,7 @@ function deleteLine() {
 		getCurrLine().txt = '';
 	} else {
 		gMeme.lines.splice(gMeme.selectedLineIdx, 1);
-		gMeme.selectedLineIdx = gMeme.selectedLineIdx - 1;
+		gMeme.selectedLineIdx = 0;
 	}
 }
 

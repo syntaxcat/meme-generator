@@ -10,29 +10,14 @@ function renderMeme() {
 		canvas.width = img.width;
 		canvas.height = img.height;
 		ctx.drawImage(img, 0, 0);
-		//1
-		ctx.font = `${getMeme().lines[0].size}px ${getMeme().lines[0].font}`;
-		var text = getMeme().lines[0].txt;
-		ctx.fillStyle = getMeme().lines[0].color;
 
-		ctx.textAlign = getMeme().lines[0].align;
+		for (var i = 0; i < getMeme().lines.length; i++) {
+			const currLine = getMeme().lines[i];
+			ctx.font = `${currLine.size}px ${currLine.font}`;
+			var text = currLine.txt;
+			ctx.fillStyle = currLine.color;
 
-		if (ctx.textAlign === 'center') {
-			x = canvas.width / 2;
-		} else if (ctx.textAlign === 'left') {
-			x = 20;
-		} else {
-			x = canvas.width - 20;
-		}
-		ctx.fillText(text, x, getMeme().lines[0].y);
-		ctx.strokeText(text, x, getMeme().lines[0].y);
-
-		//2
-		if (getMeme().lines[1]) {
-			ctx.font = `${getMeme().lines[1].size}px ${getMeme().lines[1].font}`;
-			var secText = getMeme().lines[1].txt;
-			ctx.fillStyle = getMeme().lines[1].color;
-			ctx.textAlign = getMeme().lines[1].align;
+			ctx.textAlign = currLine.align;
 
 			if (ctx.textAlign === 'center') {
 				x = canvas.width / 2;
@@ -41,8 +26,8 @@ function renderMeme() {
 			} else {
 				x = canvas.width - 20;
 			}
-			ctx.fillText(secText, x, getMeme().lines[1].y);
-			ctx.strokeText(secText, x, getMeme().lines[1].y);
+			ctx.fillText(text, x, currLine.y);
+			ctx.strokeText(text, x, currLine.y);
 		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
