@@ -102,7 +102,6 @@ function toggleMenu() {
 function onDownloadCanvas(elLink) {
 	const data = canvas.toDataURL();
 	elLink.href = data;
-	elLink.download = 'blabla';
 }
 
 function showColorPicker() {

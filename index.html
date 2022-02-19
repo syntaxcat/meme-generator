@@ -52,38 +52,42 @@
                         <button onclick="onDeleteLine()">
                             <img src="design/trash.png" alt="delete line">
                         </button>
+                        <button onclick="onMoveLineDown()">
+                            <img src="design/upArrow.png" alt="up arrow">
+                        </button>
+                        <button onclick="onMoveLineUp()">
+                            <img src="design/downArrow.png" alt="down arrow">
+                        </button>
                     </div>
-                    <button onclick="showColorPicker()">
-                        <img src="design/paint-board-and-brush.png" alt="change color">
-                    </button>
-                    <input class= "color" type="color" hidden oninput="onTxtColor(this.value)" value="#ffffff">
-                    <button onclick="onSetFontSize(+2)">
-                        <img src="design/increase font - icon.png" alt="increase font size">
-                    </button>
-                    <button onclick="onSetFontSize(-2)">
-                        <img src="design/decrease font - icon.png" alt="decrease font size">
-                    </button>
-                    <button onclick="onTextAlign('left')">
-                        <img src="design/align-to-left.png" alt="align to left">
-                    </button>
-                    <button onclick="onTextAlign('center')">
-                        <img src="design/center-text-alignment.png" alt="center text align">
-                    </button>
-                    <button onclick="onTextAlign('right')">
-                        <img src="design/align-to-right.png" alt="align to right">
-                    </button>
-                    <button onclick="onMoveLineDown()">
-                        <img src="design/upArrow.png" alt="up arrow">
-                    </button>
-                    <button onclick="onMoveLineUp()">
-                        <img src="design/downArrow.png" alt="down arrow">
-                    </button>
-                    <select onchange="onChangeFontFamily(this.value)">
-                        <option value="IMPACT">IMPACT</option>
-                        <option value="MONOSPACE">MONOSPACE</option>
-                        <option value="ARIEL">ARIEL</option>
-                    </select>
-                    <a href="#" onclick="onDownloadCanvas(this)" download="myphoto">DOWNLOAD</a>
+                    <div class="group2">
+                        <button onclick="onSetFontSize(+2)">
+                            <img src="design/increase font - icon.png" alt="increase font size">
+                        </button>
+                        <button onclick="onSetFontSize(-2)">
+                            <img src="design/decrease font - icon.png" alt="decrease font size">
+                        </button>
+                        <button onclick="onTextAlign('left')">
+                            <img src="design/align-to-left.png" alt="align to left">
+                        </button>
+                        <button onclick="onTextAlign('center')">
+                            <img src="design/center-text-alignment.png" alt="center text align">
+                        </button>
+                        <button onclick="onTextAlign('right')">
+                            <img src="design/align-to-right.png" alt="align to right">
+                        </button>
+                    </div>
+                    <div class="group3">
+                        <select onchange="onChangeFontFamily(this.value)" class="font-family">
+                            <option value="IMPACT">IMPACT</option>
+                            <option value="MONOSPACE">MONOSPACE</option>
+                            <option value="ARIEL">ARIEL</option>
+                        </select>
+                        <button onclick="showColorPicker()">
+                            <img src="design/paint-board-and-brush.png" alt="change color">
+                        </button>
+                        <input class= "color" type="color" hidden oninput="onTxtColor(this.value)" value="#ffffff">
+                    </div>
+                        <a href="#" onclick="onDownloadCanvas(this)" download="myphoto" class="download-btn">DOWNLOAD</a>
                 </div>
             </div>
         </section>
