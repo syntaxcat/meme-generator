@@ -47,7 +47,6 @@ function setFontSize(diff) {
 function createLine() {
 	let y;
 	if (gMeme.lines.length >= 2) {
-		console.log(gMeme.lines.length);
 		y = 240;
 	} else {
 		y = 480;
@@ -73,7 +72,11 @@ function deleteLine() {
 }
 
 function switchLine() {
-	gMeme.selectedLineIdx = gMeme.selectedLineIdx === 0 ? 1 : 0;
+	if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+		gMeme.selectedLineIdx = 0;
+	} else {
+		gMeme.selectedLineIdx++;
+	}
 }
 
 function setMeme(imgId) {
