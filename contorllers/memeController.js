@@ -18,6 +18,7 @@ function renderMeme() {
 			ctx.fillStyle = currLine.color;
 
 			ctx.textAlign = currLine.align;
+			ctx.textBaseline = 'top';
 
 			if (ctx.textAlign === 'center') {
 				x = canvas.width / 2;
@@ -27,7 +28,14 @@ function renderMeme() {
 				x = canvas.width - 20;
 			}
 			ctx.fillText(text, x, currLine.y);
+			ctx.strokeStyle = 'black';
 			ctx.strokeText(text, x, currLine.y);
+
+			if (i === getMeme().selectedLineIdx) {
+				ctx.lineWidth = 2;
+				ctx.strokeStyle = 'red';
+				ctx.strokeRect(0, currLine.y, canvas.width, currLine.size);
+			}
 		}
 	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);

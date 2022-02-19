@@ -49,7 +49,7 @@ function createLine() {
 	if (gMeme.lines.length >= 2) {
 		y = 240;
 	} else {
-		y = 480;
+		y = 440;
 	}
 	gMeme.lines.push({
 		txt: '',
@@ -89,7 +89,7 @@ function setMeme(imgId) {
 				size: 40,
 				align: 'center',
 				color: '#ffffff',
-				y: 60,
+				y: 20,
 				font: 'IMPACT'
 			}
 		]
