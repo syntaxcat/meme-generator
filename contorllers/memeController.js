@@ -51,6 +51,8 @@ function renderMeme() {
 
 var inputColor = document.querySelector('.color');
 
+var selectFontFamily = document.querySelector('.font-family');
+
 const input = document.querySelector('.input-txt');
 
 input.addEventListener('input', onInputChange);
@@ -92,6 +94,7 @@ function onSwitchLine() {
 	var currLine = getCurrLine();
 	input.value = currLine.txt;
 	inputColor.value = currLine.color;
+	selectFontFamily.value = currLine.font;
 	renderMeme();
 }
 
