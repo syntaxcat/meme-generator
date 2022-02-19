@@ -98,7 +98,6 @@ function showColorPicker() {
 }
 
 function onTextAlign(align) {
-	input.focus();
 	const currLine = getCurrLine();
 	ctx.font = `${currLine.size}px ${currLine.font}`;
 	setTextAlign(align, ctx.measureText(currLine.txt).width);
