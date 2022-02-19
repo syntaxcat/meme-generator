@@ -53,9 +53,9 @@ function createLine() {
 	gMeme.lines.push({
 		txt: '',
 		size: 40,
-		align: 'center',
 		color: '#ffffff',
 		y: y,
+		x: 20,
 		font: 'IMPACT'
 	});
 	gMeme.selectedLineIdx++;
@@ -86,9 +86,9 @@ function setMeme(imgId) {
 			{
 				txt: '',
 				size: 40,
-				align: 'center',
 				color: '#ffffff',
 				y: 20,
+				x: 20,
 				font: 'IMPACT'
 			}
 		]
@@ -99,8 +99,18 @@ function getCurrLine() {
 	return gMeme.lines[gMeme.selectedLineIdx];
 }
 
-function setTextAlign(align) {
-	gMeme.lines[gMeme.selectedLineIdx].align = align;
+function setTextAlign(align, textWidth) {
+	let x = 0;
+
+	if (align === 'left') {
+		x = 20;
+	} else if (align === 'right') {
+		x = 500 - textWidth - 20;
+	} else {
+		x = 250 - textWidth / 2;
+	}
+
+	gMeme.lines[gMeme.selectedLineIdx].x = x;
 }
 
 function moveLineDown() {
@@ -117,6 +127,6 @@ function changeFontFamily(font) {
 
 function moveLine(dx, dy) {
 	var currLine = gMeme.lines[gMeme.selectedLineIdx];
-	// currLine.pos.x += dx;
+	currLine.x += dx;
 	currLine.y += dy;
 }

@@ -55,7 +55,7 @@ function onUp() {
 
 function getEvPos(ev) {
 	var pos = {
-		// x: ev.offsetX,
+		x: ev.offsetX,
 		y: ev.offsetY
 	};
 	if (gTouchEvs.includes(ev.type)) {

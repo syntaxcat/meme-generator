@@ -17,17 +17,9 @@ function renderMeme(markCurrLine = true) {
 		var text = currLine.txt;
 		ctx.fillStyle = currLine.color;
 
-		ctx.textAlign = currLine.align;
 		ctx.textBaseline = 'top';
 
-		let x;
-		if (ctx.textAlign === 'center') {
-			x = canvas.width / 2;
-		} else if (ctx.textAlign === 'left') {
-			x = 20;
-		} else {
-			x = canvas.width - 20;
-		}
+		const x = currLine.x;
 		ctx.fillText(text, x, currLine.y);
 		ctx.strokeStyle = 'black';
 		ctx.lineWidth = 1;
@@ -36,7 +28,7 @@ function renderMeme(markCurrLine = true) {
 		if (markCurrLine && i === getMeme().selectedLineIdx) {
 			ctx.lineWidth = 2;
 			ctx.strokeStyle = 'red';
-			ctx.strokeRect(0, currLine.y, canvas.width, currLine.size);
+			ctx.strokeRect(x, currLine.y, ctx.measureText(currLine.txt).width, currLine.size);
 		}
 	}
 }
@@ -107,7 +99,9 @@ function showColorPicker() {
 
 function onTextAlign(align) {
 	input.focus();
-	setTextAlign(align);
+	const currLine = getCurrLine();
+	ctx.font = `${currLine.size}px ${currLine.font}`;
+	setTextAlign(align, ctx.measureText(currLine.txt).width);
 	renderMeme();
 }
 
