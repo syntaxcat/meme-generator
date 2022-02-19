@@ -18,4 +18,5 @@ function onImgSelect(imgId) {
 	document.querySelector('.gallery').style.display = 'none';
 	document.querySelector('.editor').style.display = 'flex';
 	document.querySelector('.input-txt').focus();
+	document.querySelector('.input-txt').value = '';
 }
