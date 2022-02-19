@@ -30,11 +30,11 @@ function onDown(ev) {
 			inputColor.value = line.color;
 			selectFontFamily.value = line.font;
 			renderMeme();
+			gIsDrag = true;
+			gStartPos = pos;
+			canvas.style.cursor = 'grabbing';
 		}
 	}
-	gIsDrag = true;
-	gStartPos = pos;
-	canvas.style.cursor = 'grabbing';
 }
 
 function onMove(ev) {
