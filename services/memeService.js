@@ -41,7 +41,6 @@ function setColor(color) {
 
 function setFontSize(diff) {
 	gMeme.lines[gMeme.selectedLineIdx].size += diff;
-	console.log(gMeme.lines[gMeme.selectedLineIdx].size);
 }
 
 function createLine() {
@@ -114,4 +113,10 @@ function moveLineUp() {
 
 function changeFontFamily(font) {
 	gMeme.lines[gMeme.selectedLineIdx].font = font;
+}
+
+function moveLine(dx, dy) {
+	var currLine = gMeme.lines[gMeme.selectedLineIdx];
+	// currLine.pos.x += dx;
+	currLine.y += dy;
 }

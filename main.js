@@ -3,6 +3,8 @@
 function onInit() {
 	initGallery();
 	openGallery();
+	addMouseListeners();
+	addTouchListeners();
 }
 
 function openGallery() {
