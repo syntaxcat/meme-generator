@@ -1,45 +1,43 @@
 'use strict';
 
-function renderMeme() {
+function renderMeme(markCurrLine = true) {
 	var canvas = document.querySelector('#canvas');
 	var ctx = canvas.getContext('2d');
 	let x;
 
 	var img = new Image();
-	img.onload = function() {
-		canvas.width = img.width;
-		canvas.height = img.height;
-		ctx.drawImage(img, 0, 0);
-
-		for (var i = 0; i < getMeme().lines.length; i++) {
-			const currLine = getMeme().lines[i];
-			ctx.font = `${currLine.size}px ${currLine.font}`;
-			var text = currLine.txt;
-			ctx.fillStyle = currLine.color;
-
-			ctx.textAlign = currLine.align;
-			ctx.textBaseline = 'top';
-
-			if (ctx.textAlign === 'center') {
-				x = canvas.width / 2;
-			} else if (ctx.textAlign === 'left') {
-				x = 20;
-			} else {
-				x = canvas.width - 20;
-			}
-			ctx.fillText(text, x, currLine.y);
-			ctx.strokeStyle = 'black';
-			ctx.strokeText(text, x, currLine.y);
-
-			if (i === getMeme().selectedLineIdx) {
-				ctx.lineWidth = 2;
-				ctx.strokeStyle = 'red';
-				ctx.strokeRect(0, currLine.y, canvas.width, currLine.size);
-			}
-		}
-	};
 	const result = getImgs().find((img) => img.id === getMeme().selectedImgId);
 	img.src = result.url;
+	canvas.width = img.width;
+	canvas.height = img.height;
+	ctx.drawImage(img, 0, 0);
+
+	for (var i = 0; i < getMeme().lines.length; i++) {
+		const currLine = getMeme().lines[i];
+		ctx.font = `${currLine.size}px ${currLine.font}`;
+		var text = currLine.txt;
+		ctx.fillStyle = currLine.color;
+
+		ctx.textAlign = currLine.align;
+		ctx.textBaseline = 'top';
+
+		if (ctx.textAlign === 'center') {
+			x = canvas.width / 2;
+		} else if (ctx.textAlign === 'left') {
+			x = 20;
+		} else {
+			x = canvas.width - 20;
+		}
+		ctx.fillText(text, x, currLine.y);
+		ctx.strokeStyle = 'black';
+		ctx.strokeText(text, x, currLine.y);
+
+		if (markCurrLine && i === getMeme().selectedLineIdx) {
+			ctx.lineWidth = 2;
+			ctx.strokeStyle = 'red';
+			ctx.strokeRect(0, currLine.y, canvas.width, currLine.size);
+		}
+	}
 }
 
 var inputColor = document.querySelector('.color');
@@ -96,8 +94,10 @@ function toggleMenu() {
 }
 
 function onDownloadCanvas(elLink) {
+	renderMeme(false);
 	const data = canvas.toDataURL();
 	elLink.href = data;
+	renderMeme();
 }
 
 function showColorPicker() {
